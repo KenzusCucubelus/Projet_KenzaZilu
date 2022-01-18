@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+</head>
+
+<body>
+<meta charset="utf-8">
+<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />    
+<div id="mySidenav" class="sidenav">
+    <ul>
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <li><a href="#">Home</a></li>
+         <li><a href="#">My Information</a></li>
+         <li><a href="#">Students Posts</a></li>
+         
+         
+</ul>
+  </div>
+  
+ 
+  <span style="font-size:28px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
+
+</body>
+</html>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "245px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
