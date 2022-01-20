@@ -77,9 +77,8 @@ font-weight: 500;
 input{
   display: block;
   height: 50px;
-  width: 100%;
+  width: 95%;
   background-color: rgba(61, 60, 60, 0.07);
-  
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
@@ -89,6 +88,14 @@ input{
 ::placeholder{
 color: #555 ;
 }
+
+select{
+  height: 50px;
+  width: 100%;
+  background-color: rgba(61, 60, 60, 0.07);
+ 
+}
+
 button{
 margin-top: 50px;
 width: 100%;

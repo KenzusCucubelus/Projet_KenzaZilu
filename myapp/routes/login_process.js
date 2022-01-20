@@ -25,8 +25,9 @@ let db=require("../BD_dao/model")
 router.get('/', function(req, res, next) {
   var email = req.query.email
   var pwd = req.query.pwd
+  var role = req.query.role
     
-  var  sql = "SELECT * FROM students WHERE email='"+email+"' and password='"+pwd+"'"
+  var  sql = "SELECT * FROM users WHERE email='"+email+"' and role='"+role+"'"+" and password='"+pwd+"'"
 
 
   db.query(sql,function (err, result) {

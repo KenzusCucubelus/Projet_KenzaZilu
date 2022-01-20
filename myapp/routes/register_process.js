@@ -29,11 +29,12 @@ router.post('/', function(req, res, next) {
   var last_name = req.body.last_name
   var birthday = req.body.birthday
   var formation = req.body.formation
+  var role = req.body.role
 
   console.log(email)
   
  // var user = [last_name,first_name,pwd,birthday,email,formation]
-  var  sql = "insert into students (lastname,firstname,password,birthday,email,formation) values('"+last_name+"','"+first_name+"','"+pwd+"','"+birthday+"','"+email+"','"+formation+"')"
+  var  sql = "insert into users (lastname,firstname,password,birthday,email,formation,role,photo) values('"+last_name+"','"+first_name+"','"+pwd+"','"+birthday+"','"+email+"','"+formation+"','"+role+"','photo')"
 
 
   db.query(sql,function (err, result) {
@@ -44,7 +45,7 @@ router.post('/', function(req, res, next) {
      console.log('--------------------------SELECT----------------------------');
      console.log(result);
      console.log('------------------------------------------------------------\n\n');  
-     res.sendFile(path.join(__dirname, '../public', 'index.html'));
+     res.sendFile(path.join(__dirname, '../public', 'login.html'));
 });
 
 });
