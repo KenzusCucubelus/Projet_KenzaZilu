@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />  
+<style>
+  #list_post_stu {
+    border-collapse: collapse;
+    width: 100%;
+    align-self: center;
+  }
+  
+  #list_post_stu td, #list_post_stu th {
+  
+    padding: 8px;
+    color: #555;
+    font-size: 15px;
+  }
+  
+  #list_post_stu tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #list_post_stu tr:hover {background-color: #ddd;}
+  
+  #list_post_stu th {
+
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ddd;;
+    color: white;
+  }
+  p{
+    color:#555;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Campus Epidemic Prevention and Control System</h1>
+</div>
+
+
+<!--nagivation-->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="http://127.0.0.1:3000/myinfos">Account</a>
+  <a href="http://127.0.0.1:3000/post_list_stu" class="active">Posts</a>
+  <a href="post_add_stu.html">Add Posts </a>
+  <a href="#" class="right">About</a> 
+</div>
+
+  <div class="main">
+    <p>List of posts</p>
+    <table id="list_post_stu">
+      <tr>
+        <th>Id Post</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Creation Time</th>
+        <th>Status</th>
+      </tr>
+      <% for(var i=0;i<data.length;i++){ %>
+        <tr>
+            <td><%= data[i].id_post %></td>
+            <td><%= data[i].title %></td>
+            <td><%= data[i].description %></td>
+            <td><%= data[i].create_time %></td>
+            <td><%= data[i].status %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>

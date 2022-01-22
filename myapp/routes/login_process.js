@@ -20,12 +20,15 @@ connection.connect((err) => {
   }  
 }); */
 
+
 let db=require("../BD_dao/model")
 
 router.get('/', function(req, res, next) {
   var email = req.query.email
   var pwd = req.query.pwd
   var role = req.query.role
+
+ 
     
   var  sql = "SELECT * FROM users WHERE email='"+email+"' and role='"+role+"'"+" and password='"+pwd+"'"
 
@@ -42,10 +45,23 @@ router.get('/', function(req, res, next) {
        console.log('--------------------------SELECT----------------------------');
        console.log(result);
        console.log('------------------------------------------------------------\n\n');
-       /*req.session.user=req.query.username;
-       req.session.isLogin=true;*/
-       res.json({status:1,msg:"Login successful"});
        
+      //session:
+      var string = JSON.stringify(result);
+     // console.log('>> string: ', string );
+      var json=JSON.parse(string);
+     // console.log('>> json: ', json);
+     // console.log('>> user.id_user: ', json[0].id_user);
+      req.session.user_id= json[0].id_user;
+      console.log("user id is "+req.session.user_id)
+    
+      if(req.session.user_id){
+       // res.location('http://127.0.0.1:3000/post_list_stu');
+       //res.render('post_list_stu');  //engine...how to enter js....
+       res.redirect('http://127.0.0.1:3000/post_list_stu')
+      }else{
+        res.json({status:1,msg:"session fails"});
+      }
       
 });
 })

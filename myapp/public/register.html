@@ -23,14 +23,30 @@ Formation : <input type="text" name="formation"><br><br>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/sign.css" />   
+    <link rel="stylesheet" type="text/css" href="./stylesheets/sign.css" /> 
+    <link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />  
+ 
 </head>
 <body>
+
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="http://127.0.0.1:3000/register_process" method="POST">
+    
+    <div class="header">
+        <h1>Campus Epidemic Prevention and Control System</h1>
+      </div>
+      
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="#" class="right">About</a>
+      </div>
+         <!--form page:-->
+
+     <form action="http://127.0.0.1:3000/register_process" style = "margin-top: 38%;" method="POST">
         <h3>Register</h3>
 
         <label for="email">Email</label>
@@ -41,11 +57,11 @@ Formation : <input type="text" name="formation"><br><br>
 
         <label for="first_name"> First Name</label>
         <input type="text" name="first_name">
-        <label for="first_name">Last Name</label>
+        <label for="last_name">Last Name</label>
         <input type="text" name="last_name">
-        <label for="first_name">Birthday</label>
+        <label for="birthday">Birthday</label>
         <input type="date" name="birthday" value="2000-07-22">
-        <label for="first_name">Formation</label>
+        <label for="formation">Formation</label>
         <input type="text" name="formation">
 
         <label for="role">I am</label>
@@ -56,6 +72,13 @@ Formation : <input type="text" name="formation"><br><br>
 
         <button  type="submit" >Register</button>
     </form>
+
+ 
+
+      
+   
+
+    
 
 </body>
 </html>

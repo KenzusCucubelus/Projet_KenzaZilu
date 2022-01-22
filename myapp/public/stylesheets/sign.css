@@ -1,4 +1,4 @@
-<!--Stylesheet login-->
+<!--Stylesheet login-->  
   *,
 *:before,
 *:after{
@@ -17,13 +17,13 @@ transform: translate(-50%,-50%);
 left: 50%;
 top: 50%;
 }
-.background .shape{
+/*.background .shape{
 height: 200px;
 width: 200px;
 position: absolute;
 border-radius: 50%;
 }
-/*.shape:first-child{
+.shape:first-child{
   background: linear-gradient(
       #375fbb,
       #23a2f6
@@ -46,8 +46,8 @@ width: 400px;
 background-color: rgba(255,255,255,0.13);
 position: absolute;
 transform: translate(-50%,-50%);
-top: 50%;
-left: 50%;
+margin-top: 28%;
+margin-left: 50%;
 border-radius: 10px;
 backdrop-filter: blur(10px);
 border: 2px solid rgba(255,255,255,0.1);

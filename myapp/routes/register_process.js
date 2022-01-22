@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
      console.log('--------------------------SELECT----------------------------');
      console.log(result);
      console.log('------------------------------------------------------------\n\n');  
-     res.sendFile(path.join(__dirname, '../public', 'login.html'));
+     res.sendFile(path.join(__dirname,'../public' ,'login.html'));
 });
 
 });
