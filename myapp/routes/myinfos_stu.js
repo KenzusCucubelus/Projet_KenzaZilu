@@ -7,7 +7,7 @@ let db=require("../BD_dao/model")
 
 router.get('/', function(req, res, next) {
   var id_U = req.session.user_id
-  var  sql = "SELECT * FROM posts WHERE id_user="+id_U
+  var  sql = "SELECT * FROM users WHERE id_user="+id_U
   console.log(id_U)
 
 
@@ -17,16 +17,14 @@ router.get('/', function(req, res, next) {
           return;
         }
 
-       /* if(result.length == 0){
+        if(result.length == 0){
           res.json({status:0,msg:"show list fails"});
-
-        }*/
-        res.render('post_list_stu',{
-            title:"My posts",
+        }
+        res.render('myinfos_stu',{
+            title:"MyInformation",
             data:result
         })
 
-      // res.json({status:1,msg:"list successful"});
 
        
       

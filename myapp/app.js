@@ -14,10 +14,25 @@ var loginRouter = require('./routes/login')
 var registerRouter = require('./routes/register')
 var loginProcessRouter = require('./routes/login_process')
 var RegisterProcessRouter = require('./routes/register_process')
+
+//account:
+var accountRouterS=require('./routes/myinfos_stu')
+var accountUpdateRouterS=require('./routes/update_user_stu')
+var pwdUpdateRouterS=require('./routes/update_pwd_stu')
+var accountRouterT=require('./routes/myinfos_prof')
+var accountUpdateRouterT=require('./routes/update_user_prof')
+var pwdUpdateRouterT=require('./routes/update_pwd_prof')
+
 //post:
 var postRouterS = require('./routes/post_list_stu')
-//account:
-var accountRouter=require('./routes/myinfos')
+var postRouterT = require('./routes/post_list_prof')
+var contenuRouterS = require('./routes/contenu_post_etu')
+var postUpdateRouterS =require('./routes/update_post_etu_process')
+var postAddRouterS = require('./routes/add_post_etu')
+var contenuRouterT = require('./routes/contenu_post_toValid')
+var postUpdateRouterT = require('./routes/update_post_prof_process')
+var postDeleteRouter = require('./routes/delete_post')
+
 
 
 var app = express();
@@ -49,12 +64,23 @@ app.use('/register', registerRouter);
 app.use('/login_process',loginProcessRouter)
 app.use('/register_process',RegisterProcessRouter)
 
+//Account:
+app.use('/myinfos_stu',accountRouterS)
+app.use('/update_user_stu',accountUpdateRouterS)
+app.use('/update_pwd_stu',pwdUpdateRouterS)
+app.use('/myinfos_prof',accountRouterT)
+app.use('/update_user_prof',accountUpdateRouterT)
+app.use('/update_pwd_prof',pwdUpdateRouterT)
+
 //post:
 app.use('/post_list_stu',postRouterS)
-
-//Account:
-app.use('/myinfos',accountRouter)
-
+app.use('/post_list_prof',postRouterT)
+app.use('/contenu_post_etu',contenuRouterS)
+app.use('/update_post_etu_process',postUpdateRouterS)
+app.use('/add_post_etu',postAddRouterS)
+app.use('/contenu_post_toValid',contenuRouterT)
+app.use('/update_post_prof_process',postUpdateRouterT)
+app.use('/delete_post',postDeleteRouter)
 
 
 // catch 404 and forward to error handler

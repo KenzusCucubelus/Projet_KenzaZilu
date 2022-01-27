@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />  
+<style>
+input[type=text], input[type=date]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+
+button {
+  font-family: "Poppins", sans-serif;
+  color: #f2f2f2;
+  width: 50%;
+  background-color: #566573;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+label,
+textarea {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    width: 96%;
+    min-height: 95px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+div.form {
+  margin:0 auto;
+  width:50%;
+  text-align:center;
+  color: #555;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+a {
+  float: left;
+  display: block;
+  color: #555;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Campus Epidemic Prevention and Control System</h1>
+</div>
+
+
+<!--nagivation-->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="http://127.0.0.1:3000/myinfos">Account</a>
+  <a href="http://127.0.0.1:3000/post_list_stu" class="active">Posts</a>
+  <a href="about.html" class="right">About</a> 
+</div>
+
+  <div class="main">
+
+    <a href="http://127.0.0.1:3000/post_list_stu"><--</a>
+      <h3 style="color: #555;text-align:center" > Creation </h3>
+       
+        <div class="form">
+        <form class="form-card" action="http://127.0.0.1:3000/add_post_etu" method="POST">
+          
+      
+        <label for="title">Title</label>
+        <input type="text" name="title"><br/>
+
+        <label for="description">Description</label>
+        <textarea name="description"></textarea><br/>
+
+        <label for="CreationTime">Creation Time</label>
+        <input type="date"  name="creationTime"><br/>
+
+
+        <br/>
+        <br/>
+        <button  type="submit" >Create</button>
+        </form>
+      </div>
+   
+  
+</div>
+
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+
+</body>
+</html>

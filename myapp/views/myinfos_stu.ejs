@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Account</title>
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -60,10 +60,9 @@
 <!--nagivation-->
 <div class="navbarInfo">
   <a href="index.html">Home</a>
-  <a href="http://127.0.0.1:3000/myinfos" class="active">Account</a>
+  <a href="http://127.0.0.1:3000/myinfos_stu" class="active">Account</a>
   <a href="http://127.0.0.1:3000/post_list_stu">Posts</a>
-  <a href="post_add_stu.html">Add Posts </a>
-  <a href="#"  class="right">About</a> 
+  <a href="about.html"  class="right">About</a> 
 </div>
 
 </head>
@@ -84,7 +83,7 @@
 							<img src="../public/images/user2.jpg" alt="Image" class="shadow">
 						</div>
             <% for(var i=0;i<data.length;i++){ %>
-						<h4 class="text-center" style="color: #555;"><%= data[i].lastname %></h4>
+						<h4 class="text-center" style="color: #555;"><%= data[i].firstname %></h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"  >
 						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true" >
@@ -107,52 +106,57 @@
 				</div>
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+						
+                    <form action="http://127.0.0.1:3000/update_user_stu" method="POST">
 						<h3 class="mb-4" style="color: #555;">Account Settings</h3>
 						<div class="row">
 							<div class="col-md-6">
-								<div class="form-group">
+								<div class="form-group">									
 								  	<label>First Name</label>
-								  	<input type="text" class="form-control" value=<%= data[i].firstname %>>
+								  	<input name="first_name" type="text" class="form-control" value=<%= data[i].firstname %>>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Last Name</label>
-								  	<input type="text" class="form-control" value=<%= data[i].password %>>
+								  	<input name="last_name" type="text" class="form-control" value=<%= data[i].password %>>
 								</div>
 							</div>
               <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Birthday</label>
-								  	<input type="text" class="form-control" value=<%= data[i].birthday %>>
+								  	<input name="birthday"type="text" class="form-control" value=<%= data[i].birthday %>>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Email</label>
-								  	<input type="text" class="form-control" value=<%= data[i].email %>>
+								  	<input name="email" type="text" class="form-control" value=<%= data[i].email %>>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Formation</label>
-								  	<input type="text" class="form-control" value=<%= data[i].formation %>>
+								  	<input name="formation" type="text" class="form-control" value=<%= data[i].formation %>>
 								</div>
 							</div>
-              <% } %>
+  
 						</div>
 						<div>
-							<button class="btn btn-primary">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button type = "submit" class="btn btn-primary">Update</button>
 						</div>
+			        </form>
 					</div>
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+
+					<form action="http://127.0.0.1:3000/update_pwd_stu" method="POST">
 						<h3 class="mb-4" style="color: #555;">Password Settings</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label style="font-size: 16px;">Old password</label>
-								  	<input type="password" class="form-control">
+								  	<input name="pwdOld" type="text" class="form-control" value=<%= data[i].password %>>
+									  <% } %>
 								</div>
 							</div>
 						</div>
@@ -160,20 +164,20 @@
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label style="font-size: 16px;">New password</label>
-								  	<input type="password" class="form-control">
+								  	<input name="pwdNew1"  type="password" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label style="font-size: 16px;">Confirm new password</label>
-								  	<input type="password" class="form-control">
+								  	<input name="pwdNew2"type="password" class="form-control">
 								</div>
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-primary">Update</button>
-							<button class="btn btn-light">Cancel</button>
+							<button type="submit" class="btn btn-primary">Update</button>
 						</div>
+					</form>
 					</div>
 				
 					<div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">

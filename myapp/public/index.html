@@ -22,31 +22,8 @@
   
   <a href='login.html'>Login</a>
   <a href='register.html'>Register</a>
-  <a href="#" class="right">About</a>
+  <a href="about.html" class="right">About</a>
 </div>
-
-
-<script>
-  if(req.session.user && (req.session.role == 'Student')){
-    document.getElementById('test').innerText += 
-" Editorjjjjjjjs";
-    /*document.getElementById('nav').innerHTML+= 
-      "<a href='Infos.html'>My Information</a>"+
-      "<a href='post_list_stu.html' class='active'>My Posts</a>"+
-      "<a href='post_add_stu.html'>Add Posts </a>"*/
-     ;
-  }else if(req.session.user && (req.session.role == 'Teacher')){
-    document.getElementById('nav').innerHTML+= 
-      "<a href='Infos.html'>My Information</a>"+
-      "<a href='login.html'>List of posts</a>";
-  }else if(req.session.user==[]){
-    document.getElementById('nav').innerHTML+= 
-      "<a href='login.html'>Login</a>"+
-      "<a href='register.html'>Register</a>";
-  }
-  
-  
-</script>
 
 
 <div class="row">
