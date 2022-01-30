@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
   console.log(date)
 
 
-  
+  //test
  // var user = [last_name,first_name,pwd,birthday,email,formation]
   var  sql = "insert into posts (title,create_time,description,status,id_user) values('"+title+"','"+date+"','"+desc+"','Invalid',"+id_U+")"
 
