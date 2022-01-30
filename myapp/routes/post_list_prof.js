@@ -8,23 +8,36 @@ let db=require("../BD_dao/model")
 
 router.get('/', function(req, res, next) {
 
-var  sql = "SELECT * FROM posts"
 
-db.query(sql,function (err, result) {
-      if(err){
-        console.log('[SELECT ERROR] - ',err.message);
-        return;
-      }
-     console.log('--------------------------SELECT----------------------------');
-     console.log(result);
-     console.log('------------------------------------------------------------\n\n');  
-     //res.write(JSON.stringify(result))
-     res.render('/posts',{title:'Post List',postData:result})
-     res.end();
-     
+  var  sql ="select users.id_user,lastname,firstname,birthday,email,formation,id_post,title,description,create_time,status from users,posts where posts.id_user = users.id_user"
+
+
+
+  db.query(sql,function (err, result) {
+    if(err){
+      console.log('[SELECT ERROR] - ',err.message);
+      return;
+    }
+
+   
+        if(result.length == 0){
+            res.json({status:0,msg:"show post fails"});
+          }
+        
+          res.render('post_list_prof',{
+            title:"Post list",
+            data:result
+        })
+
+
+
+  
+  
+  
 });
 
-});
+})
+
 
 
 module.exports = router;

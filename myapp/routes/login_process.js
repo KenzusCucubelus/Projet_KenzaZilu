@@ -34,7 +34,7 @@ router.get('/', function(req, res, next) {
 
 
   db.query(sql,function (err, result) {
-        if(err){
+       if(err){
           console.log('[SELECT ERROR] - ',err.message);
           return;
         }
@@ -57,8 +57,12 @@ router.get('/', function(req, res, next) {
     
       if(req.session.user_id){
        // res.location('http://127.0.0.1:3000/post_list_stu');
-       //res.render('post_list_stu');  //engine...how to enter js....
-       res.redirect('http://127.0.0.1:3000/post_list_stu')
+       //res.render('post_list_stu');  //
+       if(role == "Student"){
+       res.redirect('http://127.0.0.1:3000/myinfos_stu')
+       }else{
+         res.redirect('http://127.0.0.1:3000/myinfos_prof')
+       }
       }else{
         res.json({status:1,msg:"session fails"});
       }

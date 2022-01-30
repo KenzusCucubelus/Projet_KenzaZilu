@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
         if(result.length == 0){
           res.json({status:0,msg:"show list fails"});
         }
-        res.render('myinfos',{
+        res.render('myinfos_prof',{
             title:"MyInformation",
             data:result
         })
