@@ -8,71 +8,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
- 
-  
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+	<link rel="icon" type="image.png" href="./images/icone.png">
   <link rel="stylesheet" type="text/css" href="css/myinfos.css">
-  <link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />
-
-  <style>
-
-    .navbarInfo {
-      overflow: hidden;
-      background-color: #555;
-      position: sticky;
-      position: -webkit-sticky;
-      top: 0;
-    }
-      /* Style the navigation bar links */
-    .navbarInfo a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-    
-    
-    /* Right-aligned link */
-    .navbarInfo a.right {
-      float: right;
-    }
-    
-    /* Change color on hover */
-    .navbarInfo a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    /* Active/current link */
-    .navbarInfo a.active {
-      background-color:#666;
-      color: white;
-    }
-    </style>
-
-<div class="header">
-  <h1>Campus Epidemic Prevention and Control System</h1>
-</div>
-<!--nagivation-->
-<div class="navbarInfo">
-  <a href="index.html">Home</a>
-  <a href="http://127.0.0.1:3000/myinfos_stu" class="active">Account</a>
-  <a href="http://127.0.0.1:3000/post_list_stu">Posts</a>
-  <a href="about.html"  class="right">About</a> 
-</div>
-
-</head>
-
-
+ 
 
 <body>
+	<header class="header">
+		<img class="icone" src="images/icone.png">
+		<div class="titre">
+		  <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+		  <p>Prevention & Control System</p>
+		</div>
+		<div style="padding: 12px 75px 17px 415px;">
+		  <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
+		  <a class="a" href="http://127.0.0.1:3000/myinfos_stu" class="right">My account</a>
+		  <a class="a" href="http://127.0.0.1:3000/post_list_stu" class="right">Posts</a>
+		  <a class="a" href="about.html" class="right">About us</a>
+		</div>
+	  </header>
 
-<!--Account-->
-<body>
 	<section class="py-5 my-5">
 		<div class="container">
 			<h1 class="mb-5" style="color: #566573;">About Me</h1>
@@ -239,9 +195,27 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<footer>
+	<div class="footer">
+	  <div>
+		<h3>Contact us</h3>
+		<br>
+		<div>
+		  <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+		  <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+		</div>
+	  </div>
+	  <div>
+		<h3>Follow us</h3>
+		<br>
+		<div>
+		  <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+		  <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+		</div>
+	  </div>
+	</div>
+	<h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+  </footer>
 
 </body>
 </html>
