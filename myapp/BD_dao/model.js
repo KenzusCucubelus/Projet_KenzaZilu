@@ -3,11 +3,11 @@ const mysql = require('mysql')
 
 //Connection with Mysql:
 const connection = mysql.createConnection({
-    host : 'localhost',
-    port:'3306',
-    user:'root',
-    password:'root',
-    database:'epidemicsystem'
+    host:process.env.MYSQL_HOST || '0.0.0.0',//'172.17.0.1',
+    port: process.env.MYSQL_PORT  ||'3306',
+    user: process.env.MYSQL_USER ||'root',
+    password: process.env.MYSQL_PASS  ||'root',
+    database: process.env.MYSQL_DB ||'epidemicsystem'
 })
 connection.connect((err) => {  
   if(!err) {  
