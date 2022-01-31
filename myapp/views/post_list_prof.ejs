@@ -5,11 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ 
 <link rel="icon" type="image.png" href="./images/icone.png">
-<link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />  
+ 
 <style>
   #list_post {
     border-collapse: collapse;
@@ -17,30 +20,26 @@
     align-self: center;
   }
   
-  #list_post td, #list_post_stu th {
+  #list_post td, #list_post th {
   
     padding: 8px;
     color: #555;
     font-size: 15px;
   }
   
-
-  
   #list_post tr:hover {background-color: #ddd;}
   
   #list_post th {
 
-    font-size: 17px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     text-align: left;
     background-color: #ddd;;
     color: white;
   }
-  p{
-    color:#555;
-    text-align: center;
-  }
+ 
+
 
   button {
   font-family: "Poppins", sans-serif;
@@ -51,26 +50,74 @@
   cursor: pointer;
 
 }
+
+.header{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 5px 50px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+.fakeheader{height: 60px;}
+  
+.titre{
+  color: #8bc7fc;
+  padding: 6px 0px 7px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.a{
+  text-decoration: none;
+  color: #0b2239;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 48px;
+    background-color: #e6e9eb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copyright{
+  text-align: center;
+  color: #696c71;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
   </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>Campus Epidemic Prevention and Control System</h1>
-</div>
-
-
-<!--nagivation-->
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="http://127.0.0.1:3000/myinfos_prof">Account</a>
-  <a href="http://127.0.0.1:3000/post_list_prof" class="active">Posts</a>
-  <a href="about.html" class="right">About</a> 
-</div>
+  <header class="header">
+    <img class="icone" src="images/icone.png">
+    <div class="titre">
+      <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+      <p>Prevention & Control System</p>
+    </div>
+    <div style="padding: 12px 75px 17px 415px;">
+      <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
+      <a class="a" href="/myinfos_prof" style="margin-right: 50px;">My account</a>
+      <a class="a" href="/post_list_prof" style="margin-right: 50px;" class="active">Posts</a>
+      <a class="a" href="about.html" class="right">About us</a>   
+    </div>
+  </header>
+    <div class="fakeheader"></div>
+    <br><br>
 
   <div class="main">
-   
-    <p>List of posts</p>
+    <h4 style="color: #555; text-align: center;">List of posts</h4>
     <table id="list_post">
       <tr>
         <th>Id</th>
@@ -108,7 +155,7 @@
             <%}%>
 
             <td>
-                <form id="myForm" action="http://127.0.0.1:3000/contenu_post_toValid" method="GET"><!--contenu_post_toValid-->
+                <form id="myForm" action="/contenu_post_toValid" method="GET"><!--contenu_post_toValid-->
                 <input name ="id_post" type="hidden" value=<%= data[i].id_post %>>
                 <input name ="id_user" type="hidden" value=<%= data[i].id_user %>>
                 <button  type="submit" >Detail</button>
@@ -128,9 +175,27 @@
 
 
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<footer>
+  <div class="footer">
+    <div>
+      <h3>Contact us</h3>
+      <br>
+      <div>
+        <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+        <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+      </div>
+    </div>
+    <div>
+      <h3>Follow us</h3>
+      <br>
+      <div>
+        <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+        <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+      </div>
+    </div>
+  </div>
+  <h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+</footer>
 
 
 </body>

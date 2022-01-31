@@ -5,13 +5,61 @@
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="icon" type="image.png" href="./images/icone.png">
-  <link rel="stylesheet" type="text/css" href="css/myinfos.css">
+
+<!--link rel="preconnect" href="https://fonts.gstatic.com"-->
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"-->
+  <!--link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"-->
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image.png" href="./images/icone.png">
+
+
+  <style>
+.header{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 5px 50px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+.fakeheader{height: 60px;}
+  
+.titre{
+  color: #8bc7fc;
+  padding: 6px 0px 7px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.a{
+  text-decoration: none;
+  color: #0b2239;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 48px;
+    background-color: #e6e9eb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copyright{
+  text-align: center;
+  color: #696c71;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+  </style>
  
 
 <body>
@@ -23,11 +71,12 @@
 		</div>
 		<div style="padding: 12px 75px 17px 415px;">
 		  <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
-		  <a class="a" href="http://127.0.0.1:3000/myinfos_stu" class="right">My account</a>
-		  <a class="a" href="http://127.0.0.1:3000/post_list_stu" class="right">Posts</a>
+		  <a class="a" href="/myinfos_stu" style="margin-right: 50px;">My account</a>
+		  <a class="a" href="/post_list_stu" style="margin-right: 50px;">Posts</a>
 		  <a class="a" href="about.html" class="right">About us</a>
 		</div>
-	  </header>
+	</header>
+	<div class="fakeheader"></div>
 
 	<section class="py-5 my-5">
 		<div class="container">
@@ -63,7 +112,7 @@
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 						
-                    <form action="http://127.0.0.1:3000/update_user_stu" method="POST">
+                    <form action="/update_user_stu" method="POST">
 						<h3 class="mb-4" style="color: #555;">Account Settings</h3>
 						<div class="row">
 							<div class="col-md-6">
@@ -105,7 +154,7 @@
 					</div>
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
 
-					<form action="http://127.0.0.1:3000/update_pwd_stu" method="POST">
+					<form action="/update_pwd_stu" method="POST">
 						<h3 class="mb-4" style="color: #555;">Password Settings</h3>
 						<div class="row">
 							<div class="col-md-6">

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />  
+<link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
 <style>
 input[type=text], input[type=date]{
   width: 100%;
@@ -26,7 +26,7 @@ input[type=text], input[type=date]{
 button {
   font-family: "Poppins", sans-serif;
   color: #f2f2f2;
-  width: 50%;
+  width: 100%;
   background-color: #566573;
   padding: 14px 20px;
   margin: 8px 0;
@@ -42,7 +42,7 @@ textarea {
 }
 textarea {
     padding: 10px;
-    width: 96%;
+    width: 95%;
     min-height: 95px;
     line-height: 1.5;
     border-radius: 5px;
@@ -50,56 +50,38 @@ textarea {
     box-shadow: 1px 1px 1px #999;
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-}
 
-div.form {
-  margin:0 auto;
-  width:50%;
-  text-align:center;
-  color: #555;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
 
-a {
-  float: left;
-  display: block;
-  color: #555;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
   </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>Campus Epidemic Prevention and Control System</h1>
-</div>
-
-
-<!--nagivation-->
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="http://127.0.0.1:3000/myinfos_stu">Account</a>
-  <a href="http://127.0.0.1:3000/post_list_stu" class="active">Posts</a>
-  <a href="about.html" class="right">About</a> 
-</div>
+<header class="header">
+  <img class="icone" src="images/icone.png">
+  <div class="titre">
+    <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+    <p>Prevention & Control System</p>
+  </div>
+  <div style="padding: 12px 75px 17px 415px;">
+    <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
+    <a class="a" href="/myinfos_stu" style="margin-right: 50px;">My account</a>
+    <a class="a" href="/post_list_stu" style="margin-right: 50px;" class="active">Posts</a>
+    <a class="a" href="about.html" class="right">About us</a>   
+  </div>
+</header>
+<div class="fakeheader"></div>
+<br><br>
 
   <div class="main">
 
-    <a href="http://127.0.0.1:3000/post_list_stu">
+    <a href="/post_list_stu">
       <--
-      <!--img alt="Qries" scr="return2.png"--></a>
+     </a>
         <% for(var i=0;i<data.length;i++){ %>
         <h3 style="color: #555;text-align:center" >Post <%= data[i].id_post %></h3>
        
         <div class="form">
-        <form class="form-card" action="http://127.0.0.1:3000/update_post_etu_process" method="POST">
+        <form class="form-card" action="/update_post_etu_process" method="POST">
           
         <input type="hidden" name="id_post" value=<%= data[i].id_post %>>
       
@@ -124,9 +106,27 @@ a {
 </div>
 
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<footer>
+  <div class="footer">
+    <div>
+      <h3>Contact us</h3>
+      <br>
+      <div>
+        <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+        <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+      </div>
+    </div>
+    <div>
+      <h3>Follow us</h3>
+      <br>
+      <div>
+        <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+        <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+      </div>
+    </div>
+  </div>
+  <h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+</footer>
 
 
 </body>

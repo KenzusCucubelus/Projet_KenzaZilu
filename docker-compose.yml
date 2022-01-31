@@ -18,6 +18,8 @@ services:
       - ./www/:/var/www/html/
     ports:
       - "30001:3000"
+    depends_on:
+      - mysql-service
     container_name: epi-nodejs-app
 
   mysql-service:
@@ -29,8 +31,11 @@ services:
       - MYSQL_USER=user
       - MYSQL_PASSWORD=user
       - MYSQL_DATABASE=epidemicsystem
-    #ports:
-    #  - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./myapp/data:/docker-entrypoint-initdb.d
     container_name: epi-mysql-app
 
   phpmyadmin:

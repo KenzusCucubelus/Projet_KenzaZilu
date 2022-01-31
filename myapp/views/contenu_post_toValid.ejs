@@ -4,38 +4,83 @@
 <title>content of a post</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image.png" href="./images/icone.png">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />  
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
 <style>
+  .header{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 5px 50px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+.fakeheader{height: 60px;}
+  
+.titre{
+  color: #8bc7fc;
+  padding: 6px 0px 7px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.a{
+  text-decoration: none;
+  color: #0b2239;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 48px;
+    background-color: #e6e9eb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copyright{
+  text-align: center;
+  color: #696c71;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+
 
 .user_detail {
-    float: left;
-    
-    width: 600px;
-    height: 300px;
-   
+  float: left;
+  margin-left: 50px;
+  width: 600px;
+  height: 300px; 
+  
 }
 
 .post_detail{
     margin-left: 680px;
-    width: 1100px;
-    height: 300px;
+    width: 1200px;
+    height: 380px;
+}
+
+.main{
+  margin-bottom: 500px;
 }
 
 
-
 button {
-
-  
   font-family: "Poppins", sans-serif;
   color: #f2f2f2;
   width: 30%;
+  height: 13%;
   background-color: #566573;
-  padding: 14px 20px;
-  margin: 8px 380px;
+  padding-bottom: 3%;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -54,8 +99,8 @@ label {
 
 textarea {
     padding: 10px;
-    width: 80%;
-    min-height: 150px;
+    width: 90%;
+    min-height: 210px;
     line-height: 1.5;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -71,58 +116,56 @@ textarea::-webkit-scrollbar-thumb {
   background-color: #566573; }
 
 
-div.form {
-  width:50%;
-
-  color: #555;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-a {
-  float: left;
-  display: block;
-  color: #555;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
 p {
     font-size: 15px;
     letter-spacing: 1px;
+}
+
+form{
+height: auto;
+width: 400px;
+background-color: rgba(255,255,255,0.13);
+margin: 25px 100px 50px;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255,255,255,0.1);
+box-shadow: 0 0 40px rgba(8,7,16,0.6);
+padding: 50px 35px;
 }
   </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>Campus Epidemic Prevention and Control System</h1>
-</div>
-
-
-<!--nagivation 4285F4-->
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="http://127.0.0.1:3000/myinfos_prof">Account</a>
-  <a href="http://127.0.0.1:3000/post_list_prof" class="active">Posts</a>
-  <a href="about.html" class="right">About</a> 
-</div>
+  <header class="header">
+    <img class="icone" src="images/icone.png">
+    <div class="titre">
+      <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+      <p>Prevention & Control System</p>
+    </div>
+    <div style="padding: 12px 75px 17px 415px;">
+      <a class="a" href="index.html" style="margin-right: 40px;">Home</a>
+      <a class="a" href="/myinfos_prof" style="margin-right: 40px;">My account</a>
+      <a class="a" href="/post_list_prof" style="margin-right: 40px;" class="active">Posts</a>
+      <a class="a" href="about.html" class="right">About us</a>   
+    </div>
+  </header>
+  <div class="fakeheader"></div>
+  <br><br>  <br>
 
   <div class="main">
 
-    <a href="http://127.0.0.1:3000/post_list_prof"><--</a><br/>
+    <a href="/post_list_prof"><--</a><br/>
 
       
    
       <!-- user_detail:-->
       <% for(var i=0;i<data_user.length;i++){ %>
         <div class="user_detail">
-            <h3 style="color: #555" >Student Information</h3>
+            <h4 style="color: #555 ; text-align: center;"  >Student Information</h4>
             <div class="form">
             <!--%= data_user[i].photo %-->
-            <img src="/media/cc0-images/grapefruit-slice-332-332.jpg"><br/>
+            <form>
+              <img class="image" width="80" height="80" src="images/profil4.png">
 
 
             <label for="lastname">Last name:</label>
@@ -141,11 +184,11 @@ p {
             <label for="formation">Formation:</label>
             <p name="formation"><%= data_user[i].formation %></p> <br/>
             <br/>
-           
+          </form>
             </div>
 <% } %>
     
-</div>
+        </div>
   
     
 
@@ -154,10 +197,10 @@ p {
         <% for(var i=0;i<data.length;i++){ %>
 
         <div class="post_detail">
-        <h3 style="color: #555" >Post Details</h3>
+        <h4 style="color: #555 ; margin-left: 250px;">Post Details</h4>
  
             <div class="form">
-                <form class="form-card" action="http://127.0.0.1:3000/update_post_prof_process" method="POST">
+                <form class="form-card" action="/update_post_prof_process" method="POST">
                   
                 <input type="hidden" name="id_post" value=<%= data[i].id_post %>>
               
@@ -202,15 +245,35 @@ p {
         <% } %>
 
        
-      </div>
+       </div>
    
   
 </div>
 
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+
+
+<footer>
+  <div class="footer">
+    <div>
+      <h3>Contact us</h3>
+      <br>
+      <div>
+        <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+        <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+      </div>
+    </div>
+    <div>
+      <h3>Follow us</h3>
+      <br>
+      <div>
+        <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+        <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+      </div>
+    </div>
+  </div>
+  <h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+</footer>
 
 
 </body>

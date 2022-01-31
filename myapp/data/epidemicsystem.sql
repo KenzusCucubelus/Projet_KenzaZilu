@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 20 Janvier 2022 à 15:52
+-- Généré le :  Lun 31 Janvier 2022 à 21:20
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -40,7 +40,13 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id_post`, `title`, `create_time`, `description`, `status`, `id_user`) VALUES
-(1, 'Congé', '2022-12-09', 'this is a post', 'pas traité', 1);
+(2, 'cas', '2022-01-31', 'i have a declaration to say', 'Invalid', 13),
+(3, 'mythirdpost', '2022-12-23', 'conge', 'Valid', 13),
+(4, '4', '2022-01-23', 'mypost444444444444444444444444444', 'Valid', 13),
+(5, 'cas contact', '2022-12-23', 'I have a cas contact', 'Invalid', 12),
+(7, 'mypost', '2022-01-13', 'this is a declaration', 'Valid', 13),
+(8, 'add apost', '2022-01-11', 'i just add a post', 'Invalid', 13),
+(9, 'try to add', '2022-01-31', 'tryToAdd', 'Invalid', 13);
 
 -- --------------------------------------------------------
 
@@ -85,7 +91,17 @@ INSERT INTO `users` (`id_user`, `lastname`, `firstname`, `password`, `birthday`,
 (5, 'Yang', 'Zilu', 'sss', '2000-07-22', 'ya@gmail.com', 'sss', '', ''),
 (6, 'sss', 'sssss', 'sss', '2000-07-22', 'dfsdg@com', 'sss', '', ''),
 (7, 'sss', 'sss', 'sss', '2000-07-22', 'sss@g.com', 'sss', 'Teacher', 'photo'),
-(8, 'sss', 'sss', 'sss', '2000-07-22', 'sss@g.com', 'sss', 'Student', 'photo');
+(8, 'sss@com', 'undefined', 'sss', 'undefined', 'undefined', 'undefined', 'Student', 'photo'),
+(9, 'eee', 'eee', 'eee', '2000-07-22', 'ee@h.com', 'eee', 'Student', 'photo'),
+(10, 'eee', 'eee', 'eee', '2000-07-22', 'ee@h.com', 'eee', 'Student', 'photo'),
+(11, 'eee', 'eee', '', '2000-07-22', 'ee@h.com', 'eee', 'Student', 'photo'),
+(12, 'ff', 'ff', 'ff', '2000-07-22', 'ff@ff.vom', 'ff', 'Student', 'photo'),
+(13, 'uuuu', 'uuu', 'uuuu', '2000-07-22', 'uuu@u.com', 'ComputerInformationSystems', 'Student', 'photo'),
+(14, 'aaa', 'aaa', 'aaa', '2000-07-20', 'aaa@gmail.com', 'Bio', 'Student', 'photo'),
+(15, 'aaa', 'aaa', 'aaa', '2000-07-20', 'aaa@gmail.com', 'Bio', 'Student', 'photo'),
+(16, 'teacher', 'teacher', 'ttt', '1992-06-12', 'ttt@com', 'Computer', 'Teacher', 'photo'),
+(17, 'jjj', 'jjj', 'jjj', '1993-07-22', 'jjj@j.com', 'iii', 'Teacher', 'photo'),
+(18, 'lll', 'lll', 'lll', '2000-07-22', 'lll@g.com', 'Informatique', 'Student', 'photo');
 
 --
 -- Index pour les tables exportées
@@ -117,7 +133,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `relations`
 --
@@ -127,7 +143,8 @@ ALTER TABLE `relations`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

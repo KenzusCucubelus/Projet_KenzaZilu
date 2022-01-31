@@ -5,65 +5,74 @@
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image.png" href="./images/icone.png">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/myinfos.css">
-  <link rel="stylesheet" type="text/css" href="./stylesheets/nav.css" />
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image.png" href="./images/icone.png"> 
+
 
   <style>
+.header{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 5px 50px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px #ccc;
+}
 
-    .navbarInfo {
-      overflow: hidden;
-      background-color: #555;
-      position: sticky;
-      position: -webkit-sticky;
-      top: 0;
-    }
-      /* Style the navigation bar links */
-    .navbarInfo a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-    
-    
-    /* Right-aligned link */
-    .navbarInfo a.right {
-      float: right;
-    }
-    
-    /* Change color on hover */
-    .navbarInfo a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    /* Active/current link */
-    .navbarInfo a.active {
-      background-color:#666;
-      color: white;
-    }
-    </style>
+.fakeheader{height: 60px;}
+  
+.titre{
+  color: #8bc7fc;
+  padding: 6px 0px 7px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
 
-<div class="header">
-  <h1>Campus Epidemic Prevention and Control System</h1>
-</div>
-<!--nagivation-->
-<div class="navbarInfo">
-  <a href="index.html">Home</a>
-  <a href="http://127.0.0.1:3000/myinfos_prof" class="active">Account</a>
-  <a href="http://127.0.0.1:3000/post_list_prof">Posts</a>
-  <a href="about.html"  class="right">About</a> 
-</div>
+.a{
+  text-decoration: none;
+  color: #0b2239;
+  font-weight: bold;
+  font-size: 20px;
+}
 
-</head>
+.footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 48px;
+    background-color: #e6e9eb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copyright{
+  text-align: center;
+  color: #696c71;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+  </style>
+
+
+
+<header class="header">
+    <img class="icone" src="images/icone.png">
+    <div class="titre">
+      <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+      <p>Prevention & Control System</p>
+    </div>
+    <div style="padding: 12px 75px 17px 415px;">
+      <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
+	  <a class="a" href="/myinfos_prof" style="margin-right: 50px;"class="active">My account</a>
+	  <a class="a" href="/post_list_prof"style="margin-right: 50px;">Posts</a>
+      <a class="a" href="about.html" class="right">About us</a>
+    </div>
+  </header>
+  <div class="fakeheader"></div>
 
 
 
@@ -105,7 +114,7 @@
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 						
-                    <form action="http://127.0.0.1:3000/update_user_prof" method="POST">
+                    <form action="/update_user_prof" method="POST">
 						<h3 class="mb-4" style="color: #555;">Account Settings</h3>
 						<div class="row">
 							<div class="col-md-6">
@@ -147,7 +156,7 @@
 					</div>
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
 
-					<form action="http://127.0.0.1:3000/update_pwd_prof" method="POST">
+					<form action="/update_pwd_prof" method="POST">
 						<h3 class="mb-4" style="color: #555;">Password Settings</h3>
 						<div class="row">
 							<div class="col-md-6">
@@ -237,9 +246,27 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<footer>
+	<div class="footer">
+	  <div>
+		<h3>Contact us</h3>
+		<br>
+		<div>
+		  <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+		  <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+		</div>
+	  </div>
+	  <div>
+		<h3>Follow us</h3>
+		<br>
+		<div>
+		  <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+		  <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+		</div>
+	  </div>
+	</div>
+	<h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+  </footer>
 
 </body>
 </html>
