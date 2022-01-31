@@ -21,7 +21,7 @@
   </div>
   <div style="padding: 12px 75px 17px 415px;">
     <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
-    <a class="a" href="#" class="right">About us</a>
+    <a class="a" href="about.html" class="right">About us</a>
   </div>
   <div style="margin-top: 7px;">
     <button class="button" id="hover" style="width: 90px;"><a href='register.html'>Register</a></button>
@@ -52,30 +52,49 @@
   
 </script>
 
+<h2 class="gestes">Barrier gestures</h2>
+<img src="./images/covid.png" style="width: 80%; padding: 0px 126px 10px 126px;">
+<div class="questions">
+  <h3 style="color: #0b2239; margin-bottom: 7px;">You have questions about the coronavirus ?</h3>
+  <a href="https://www.gouvernement.fr/info-coronavirus" class="decoration"><p>GOUVERNEMENT.FR/INFO-CORONAVIRUS</p></a>
+  <p class="decoration" style="margin-top: 4px;">Tel : 0 800 130 000</p>
+</div> 
+<h2 class="gestes">Covid19 Statistics</h2>  
+<div id="ytplayer"></div>
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-<div class="row">
-  <div class="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '750',
+      width: '90%',
+      videoId: 'NMre6IAAAiU'
+    });
+  }
+</script>
+<br>
+<div style="margin-bottom: 20px;">
+  <h2 class="gestes">Our premises</h2> 
+  <div style="display: flex; justify-content: space-between;
+  padding: 0px 120px 0px 100px;">
+    <div>
+      <br><br><br>
+      <br><br><br>
+  <h3 style="color: #8bc7fc; margin-bottom: 10px;">Open</h3>
+  <h4 style="margin-bottom: 3px;">Monday to Friday</h4>
+  <h4>From 9 a.m. to 6 p.m.</h4>
   </div>
-  <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
+<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.14284257475!2d2.3304025147143133!3d48.8554864792872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d7f229e5d9%3A0xd339dcc617dbcf46!2s45%20Rue%20des%20Saints-P%C3%A8res%2C%2075006%20Paris!5e0!3m2!1sfr!2sfr!4v1643631311057!5m2!1sfr!2sfr" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 </div>
-
-<footer>
+  <footer>
   <div class="footer">
     <div>
       <h3>Contact us</h3>
