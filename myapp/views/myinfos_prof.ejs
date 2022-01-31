@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Account</title>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image.png" href="./images/icone.png"> 
+
+
+  <style>
+.header{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 5px 50px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+.fakeheader{height: 60px;}
+  
+.titre{
+  color: #8bc7fc;
+  padding: 6px 0px 7px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.a{
+  text-decoration: none;
+  color: #0b2239;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 48px;
+    background-color: #e6e9eb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copyright{
+  text-align: center;
+  color: #696c71;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+  </style>
+
+
+
+<header class="header">
+    <img class="icone" src="images/icone.png">
+    <div class="titre">
+      <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+      <p>Prevention & Control System</p>
+    </div>
+    <div style="padding: 12px 75px 17px 415px;">
+      <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
+	  <a class="a" href="/myinfos_prof" style="margin-right: 50px;"class="active">My account</a>
+	  <a class="a" href="/post_list_prof"style="margin-right: 50px;">Posts</a>
+      <a class="a" href="about.html" class="right">About us</a>
+    </div>
+  </header>
+  <div class="fakeheader"></div>
+
+
+
+<body>
+
+<!--Account-->
+<body>
+	<section class="py-5 my-5">
+		<div class="container">
+			<h1 class="mb-5" style="color: #566573;">About Me</h1>
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav border-right">
+					<div class="p-4">
+						<div class="img-circle text-center mb-3">
+							<img src="../public/images/user2.jpg" alt="Image" class="shadow">
+						</div>
+            <% for(var i=0;i<data.length;i++){ %>
+						<h4 class="text-center" style="color: #555;"><%= data[i].firstname %></h4>
+					</div>
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"  >
+						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true" >
+							<i class="fa fa-home text-center mr-1" style="color: #566573"></i> 
+							Account
+						</a>
+						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+							<i class="fa fa-key text-center mr-1" style="color: #566573"></i> 
+							Password
+						</a>
+						<a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
+							<i class="fa fa-tv text-center mr-1" style="color: #566573"></i> 
+							Application
+						</a>
+						<a class="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
+							<i class="fa fa-bell text-center mr-1" style="color: #566573"></i> 
+							Notification
+						</a>
+					</div>
+				</div>
+				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+						
+                    <form action="/update_user_prof" method="POST">
+						<h3 class="mb-4" style="color: #555;">Account Settings</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">									
+								  	<label>First Name</label>
+								  	<input name="first_name" type="text" class="form-control" value=<%= data[i].firstname %>>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Last Name</label>
+								  	<input name="last_name" type="text" class="form-control" value=<%= data[i].password %>>
+								</div>
+							</div>
+              <div class="col-md-6">
+								<div class="form-group">
+								  	<label>Birthday</label>
+								  	<input name="birthday"type="text" class="form-control" value=<%= data[i].birthday %>>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Email</label>
+								  	<input name="email" type="text" class="form-control" value=<%= data[i].email %>>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Formation</label>
+								  	<input name="formation" type="text" class="form-control" value=<%= data[i].formation %>>
+								</div>
+							</div>
+  
+						</div>
+						<div>
+							<button type = "submit" class="btn btn-primary">Update</button>
+						</div>
+			        </form>
+					</div>
+					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+
+					<form action="/update_pwd_prof" method="POST">
+						<h3 class="mb-4" style="color: #555;">Password Settings</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label style="font-size: 16px;">Old password</label>
+								  	<input name="pwdOld" type="text" class="form-control" value=<%= data[i].password %>>
+									  <% } %>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label style="font-size: 16px;">New password</label>
+								  	<input name="pwdNew1"  type="password" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label style="font-size: 16px;">Confirm new password</label>
+								  	<input name="pwdNew2"type="password" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-primary">Update</button>
+						</div>
+					</form>
+					</div>
+				
+					<div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
+						<h3 class="mb-4" style="color: #555;">Application Settings</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group" style="color: #555; font-size: 15px;">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="app-check">
+										<label class="form-check-label" for="app-check">
+										App check
+										</label>
+									</div>
+									<div class="form-check"style="color: #555; font-size: 15px;">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+										<label class="form-check-label" for="defaultCheck2">
+										Lorem ipsum dolor sit.
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-primary">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+						<h3 class="mb-4" style="color: #555;">Notification Settings</h3>
+						<div class="form-group" style="color: #555; font-size: 15px;">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="notification1">
+								<label class="form-check-label" for="notification1">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium accusamus, neque cupiditate quis
+								</label>
+							</div>
+						</div>
+						<div class="form-group" style="color: #555; font-size: 15px;">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="notification2" >
+								<label class="form-check-label" for="notification2">
+									hic nesciunt repellat perferendis voluptatum totam porro eligendi.
+								</label>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-primary">Update</button>
+							<button class="btn btn-light">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+<footer>
+	<div class="footer">
+	  <div>
+		<h3>Contact us</h3>
+		<br>
+		<div>
+		  <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+		  <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+		</div>
+	  </div>
+	  <div>
+		<h3>Follow us</h3>
+		<br>
+		<div>
+		  <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+		  <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+		</div>
+	  </div>
+	</div>
+	<h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>content of a post</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+<style>
+  .header{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 5px 50px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+.fakeheader{height: 60px;}
+  
+.titre{
+  color: #8bc7fc;
+  padding: 6px 0px 7px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.a{
+  text-decoration: none;
+  color: #0b2239;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 48px;
+    background-color: #e6e9eb;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#copyright{
+  text-align: center;
+  color: #696c71;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+
+
+.user_detail {
+  float: left;
+  margin-left: 50px;
+  width: 600px;
+  height: 300px; 
+  
+}
+
+.post_detail{
+    margin-left: 680px;
+    width: 1200px;
+    height: 380px;
+}
+
+.main{
+  margin-bottom: 500px;
+}
+
+
+button {
+  font-family: "Poppins", sans-serif;
+  color: #f2f2f2;
+  width: 30%;
+  height: 13%;
+  background-color: #566573;
+  padding-bottom: 3%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+label {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+textarea {
+    padding: 10px;
+    width: 90%;
+    min-height: 210px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+textarea::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #566573; }
+
+
+p {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+form{
+height: auto;
+width: 400px;
+background-color: rgba(255,255,255,0.13);
+margin: 25px 100px 50px;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255,255,255,0.1);
+box-shadow: 0 0 40px rgba(8,7,16,0.6);
+padding: 50px 35px;
+}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <img class="icone" src="images/icone.png">
+    <div class="titre">
+      <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+      <p>Prevention & Control System</p>
+    </div>
+    <div style="padding: 12px 75px 17px 415px;">
+      <a class="a" href="index.html" style="margin-right: 40px;">Home</a>
+      <a class="a" href="/myinfos_prof" style="margin-right: 40px;">My account</a>
+      <a class="a" href="/post_list_prof" style="margin-right: 40px;" class="active">Posts</a>
+      <a class="a" href="about.html" class="right">About us</a>   
+    </div>
+  </header>
+  <div class="fakeheader"></div>
+  <br><br>  <br>
+
+  <div class="main">
+
+    <a href="/post_list_prof"><--</a><br/>
+
+      
+   
+      <!-- user_detail:-->
+      <% for(var i=0;i<data_user.length;i++){ %>
+        <div class="user_detail">
+            <h4 style="color: #555 ; text-align: center;"  >Student Information</h4>
+            <div class="form">
+            <!--%= data_user[i].photo %-->
+            <form>
+              <img class="image" width="80" height="80" src="images/profil4.png">
+
+
+            <label for="lastname">Last name:</label>
+            <p name="lastname"><%= data_user[i].lastname %></p> <br/>
+    
+            <label for="firstname">First name:</label>
+            <p name="firstname"><%= data_user[i].firstname %></p> <br/>
+    
+    
+            <label for="birthday">Birthday:</label>
+            <p name="birthday"><%= data_user[i].birthday %></p> <br/>
+    
+            <label for="email">E-mail:</label>
+            <p name="email"><%= data_user[i].email %></p> <br/>
+    
+            <label for="formation">Formation:</label>
+            <p name="formation"><%= data_user[i].formation %></p> <br/>
+            <br/>
+          </form>
+            </div>
+<% } %>
+    
+        </div>
+  
+    
+
+
+<!--Post_detail-->
+        <% for(var i=0;i<data.length;i++){ %>
+
+        <div class="post_detail">
+        <h4 style="color: #555 ; margin-left: 250px;">Post Details</h4>
+ 
+            <div class="form">
+                <form class="form-card" action="/update_post_prof_process" method="POST">
+                  
+                <input type="hidden" name="id_post" value=<%= data[i].id_post %>>
+              
+               
+                <label for="title">Title:</label>
+                <p name="title"><%= data[i].title %></p><br/>
+        
+                <label for="description">Description:</label>
+                <textarea class="form-control"style="resize:none; overflow:scroll;" name="description" readonly="readonly">
+                    <%= data[i].description %> 
+                    I
+                    have
+                    too
+                    many
+                    thing
+                    to say
+                </textarea>
+                <br/>
+        
+                <label for="creationTime">Creation time:</label>
+                <p name="creationTime"W><%= data[i].create_time %></p><br/>
+        
+                <label for="status">Status:</label>
+                <input type="hidden" name="status" value=<%= data[i].status %>>
+                
+
+                <%if (data[i].status == "Invalid"){ %>
+                    <p name="status" style="color:red"><%= data[i].status %></p> <br/>
+                    <button type="submit" >Valid it</button>
+                    <% }else{ %>
+                    <p name="status" style="color:green"><%= data[i].status%></p> <br/>
+                    <button type="submit" >Invalid it</button>
+                    <%}%>
+         
+            </form>
+        </div>
+        
+           
+
+   
+
+        <% } %>
+
+       
+       </div>
+   
+  
+</div>
+
+
+
+
+<footer>
+  <div class="footer">
+    <div>
+      <h3>Contact us</h3>
+      <br>
+      <div>
+        <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+        <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+      </div>
+    </div>
+    <div>
+      <h3>Follow us</h3>
+      <br>
+      <div>
+        <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+        <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+      </div>
+    </div>
+  </div>
+  <h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+</footer>
+
+
+</body>
+</html>

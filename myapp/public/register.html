@@ -1,0 +1,104 @@
+<!--html>
+<body>
+<form action="http://127.0.0.1:3000/register_process" method="POST">
+
+E-mail : <input type="email" name="email"  size="30" required><br><br>
+Password : <input type="password" name="pwd"><br><br>
+First Name: <input type="text" name="first_name"> <br><br>
+Last Name: <input type="text" name="last_name"><br><br>
+Birthday : <input type="date" name="birthday" value="2000-07-22"><br><br>
+Formation : <input type="text" name="formation"><br><br>
+<input type="submit" value="Register">
+</form>
+
+</body>
+</html-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login In</title>
+    <link rel="icon" type="image.png" href="./images/icone.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />  
+ 
+</head>
+<body>
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="header">
+        <img class="icone" src="images/icone.png">
+        <div class="titre">
+          <p style="color: #0b2239; margin-bottom: 2px;">Campus Epidemic</p>
+          <p>Prevention & Control System</p>
+        </div>
+        <div style="padding: 12px 75px 17px 415px;">
+          <a class="a" href="index.html" style="margin-right: 50px;">Home</a>
+          <a class="a" href="#" class="right">About us</a>
+        </div>
+        <div style="margin-top: 7px;">
+          <button class="button" id="hover" style="width: 90px;"><a href='register.html'>Register</a></button>
+          <button class="button" style="width: 80px;"><a href='login.html'>Login</a></button>
+        </div>
+      </div>
+      <div class="fakeheader"></div>
+
+     <form action="http://127.0.0.1:3000/register_process" method="POST">
+        <h3>Register</h3>
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="Your Email" name="email"size="30" required>
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" name="pwd">
+
+        <label for="first_name"> First Name</label>
+        <input type="text" name="first_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name">
+        <label for="birthday">Birthday</label>
+        <input type="date" name="birthday" value="2000-07-22">
+        <label for="formation">Formation</label>
+        <input type="text" name="formation">
+        
+
+        <label for="role">I am</label>
+        <select class ="role" name="role">
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+        </select>
+
+        <button  type="submit" class="register">Register</button>
+    </form>
+    <footer>
+      <div class="footer">
+        <div>
+          <h3>Contact us</h3>
+          <br>
+          <div>
+            <p><img src="images/tel1.png" class="image">+33 7.77.77.77.77</p>
+            <p><img src="images/mail1.png" class="image">hello@campusepidemic.fr</p>
+          </div>
+        </div>
+        <div>
+          <h3>Follow us</h3>
+          <br>
+          <div>
+            <a href="https://www.facebook.com"><img src="images/fb1.png" class="reseau"></a>
+            <a href="https://www.instagram.com"><img src="images/insta1.png" class="reseau"></a>
+          </div>
+        </div>
+      </div>
+      <h3><p id="copyright"><sup>© </sup>2022 campusepidemicprevention&controlsystem.fr</p></h3>
+    </footer>
+    
+
+</body>
+</html>

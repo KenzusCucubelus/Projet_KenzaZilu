@@ -1,0 +1,59 @@
+services:
+
+  nodejs-service:
+    build: 
+      context: myapp
+      dockerfile: ./Dockerfile
+    image: zilu/myapp-epidemies
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MYSQL_HOST=mysql-service
+      - MYSQL_USER=user
+      - MYSQL_ROOT_USER=root
+      - MYSQL_PASS=user
+      - MYSQL_DB=epidemicsystem
+    volumes:
+      - ./www/:/var/www/html/
+    ports:
+      - "30001:3000"
+    depends_on:
+      - mysql-service
+    container_name: epi-nodejs-app
+
+  mysql-service:
+    image: mysql
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+      - MYSQL_DATABASE=epidemicsystem
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./myapp/data:/docker-entrypoint-initdb.d
+    container_name: epi-mysql-app
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql-service
+    networks:
+      - backend
+    ports:
+      - "30002:80"
+    environment:
+      - PMA_HOST=mysql-service
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: epi-phpmyadmin-app
+
+      
+networks:
+  frontend:
+  backend:
